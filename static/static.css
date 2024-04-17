@@ -67,13 +67,13 @@ body{
   height:calc( var(--ylen)/2 * 1em); 
 }
 
-.t-green{
+.t-lb{
   top: calc(var(--ylen)/2 * 1em);
 }
-.t-yellow{
+.t-rt{
   left: calc(var(--xlen)/2 * 1em);
 }
-.t-red{
+.t-rb{
   top: calc(var(--ylen)/2 * 1em);
   left: calc(var(--xlen)/2 * 1em);
 }
@@ -85,27 +85,25 @@ body{
   position: absolute;
 }
 
-.t-blue::after{
+.t-lt::after{
   animation: a var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
-  background-color: blue;
 }
 
-.t-green::after{
+.t-lb::after{
   content: var(--text);
   animation: b var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
   
 }
 
-.t-yellow::after{
+.t-rt::after{
   animation: c var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
 
 }
-.t-red::after{
+.t-rb::after{
   animation: d var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
-background-color: red;
 
 }
