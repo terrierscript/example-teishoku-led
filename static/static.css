@@ -4,14 +4,14 @@ body{
 :root{
   --xlen: 3;
   --ylen: 1;
-  /* --animloop: infinite; */
-  --animloop: 1;
-  --animfn: linear(0 0%, 1 80%, 1 100%);
-  --animspeed: 1s;
+  --animloop: 5;
+  /* --animloop: 1; */
+  --animfn: linear(0 0%, 1 50%, 1 100%);
+  --animspeed: 0.25s;
   --text: "営業中";
   --fillmode: both;
 }
-@keyframes a {
+@keyframes lt {
   0%{
     top: calc(var(--ylen)/2 * 1em);
     left: calc(var(--xlen)/2 * 1em);
@@ -21,7 +21,7 @@ body{
     left: 0;
   }
 }
-@keyframes b {
+@keyframes lb {
   0%{
     top: calc(var(--ylen)/2 * -2em);
     left: calc(var(--xlen)/2 * 1em);
@@ -33,7 +33,7 @@ body{
   }
 }
 
-@keyframes c {
+@keyframes rt {
   0%{
     top: calc(var(--ylen)/2 * 1em);
     left: calc(var(--xlen)/2 * -2em);
@@ -43,7 +43,7 @@ body{
     left: calc(var(--xlen)/2 * -1em); 
   }
 }
-@keyframes d {
+@keyframes rb {
   0%{
     top: calc(var(--ylen)/2 * -2em);
     left: calc(var(--xlen)/2 * -2em);
@@ -53,8 +53,16 @@ body{
     left: calc(var(--xlen)/2 * -1em);
   }
 }
+/* .c2{
+  padding: 20px;
+} */
 .container{
   position: relative;
+  border:20px solid orange;
+  font-size: 120px;
+  width:calc(var(--xlen)  * 1em);
+  height:calc( var(--ylen) * 1em); 
+  background-color: orange;
 }
 .target{
   font-weight: bold;
@@ -63,6 +71,7 @@ body{
   position: absolute;
   overflow: hidden;
   background-color: orange;
+  color: white;
   width:calc(var(--xlen) / 2 * 1em);
   height:calc( var(--ylen)/2 * 1em); 
 }
@@ -86,24 +95,26 @@ body{
 }
 
 .t-lt::after{
-  animation: a var(--animspeed) var(--animloop) var(--animfn);
+  animation: lt var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
+  animation-d;
+  
 }
 
 .t-lb::after{
   content: var(--text);
-  animation: b var(--animspeed) var(--animloop) var(--animfn);
+  animation: lb var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
   
 }
 
 .t-rt::after{
-  animation: c var(--animspeed) var(--animloop) var(--animfn);
+  animation: rt var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
 
 }
 .t-rb::after{
-  animation: d var(--animspeed) var(--animloop) var(--animfn);
+  animation: rb var(--animspeed) var(--animloop) var(--animfn);
   animation-fill-mode: var(--fillmode);
 
 }
