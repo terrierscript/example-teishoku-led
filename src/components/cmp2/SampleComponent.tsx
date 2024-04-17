@@ -27,20 +27,16 @@ const Ramen = () => {
       {pos.map((p, i) => {
         const color = p
         return <Box
-          className={`cnt c-${color}`}
-        >
-          <Box
-            className={`target t-${color}`}
-            key={i} >
-            {/* {text} */}
-          </Box>
+          className={`target t-${color}`}
+          key={i} >
+          {/* {text} */}
         </Box>
       })
       }
     </Box >
   </Box >
 }
-export const SampleComponent: FC<{}> = () => {
+export const SampleComponent2: FC<{}> = () => {
   return <Box>
     < Ramen />
   </Box>

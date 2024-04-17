@@ -1,0 +1,111 @@
+body{
+  /* margin:0px; */
+}
+:root{
+  --xlen: 3;
+  --ylen: 1;
+  /* --animloop: infinite; */
+  --animloop: 1;
+  --animfn: linear(0 0%, 1 80%, 1 100%);
+  --animspeed: 1s;
+  --text: "営業中";
+  --fillmode: both;
+}
+@keyframes a {
+  0%{
+    top: calc(var(--ylen)/2 * 1em);
+    left: calc(var(--xlen)/2 * 1em);
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes b {
+  0%{
+    top: calc(var(--ylen)/2 * -2em);
+    left: calc(var(--xlen)/2 * 1em);
+
+  }
+  100%{
+    top: calc(var(--ylen)/2 * -1em); 
+    left: 0;
+  }
+}
+
+@keyframes c {
+  0%{
+    top: calc(var(--ylen)/2 * 1em);
+    left: calc(var(--xlen)/2 * -2em);
+  }
+  100%{
+    top:0;
+    left: calc(var(--xlen)/2 * -1em); 
+  }
+}
+@keyframes d {
+  0%{
+    top: calc(var(--ylen)/2 * -2em);
+    left: calc(var(--xlen)/2 * -2em);
+  }
+  100%{
+    top: calc(var(--ylen)/2 * -1em);
+    left: calc(var(--xlen)/2 * -1em);
+  }
+}
+.container{
+  position: relative;
+}
+.target{
+  font-weight: bold;
+  font-size: 120px;
+  line-height: 1em;
+  position: absolute;
+  overflow: hidden;
+  background-color: orange;
+  width:calc(var(--xlen) / 2 * 1em);
+  height:calc( var(--ylen)/2 * 1em); 
+}
+
+.t-green{
+  top: calc(var(--ylen)/2 * 1em);
+}
+.t-yellow{
+  left: calc(var(--xlen)/2 * 1em);
+}
+.t-red{
+  top: calc(var(--ylen)/2 * 1em);
+  left: calc(var(--xlen)/2 * 1em);
+}
+
+.target::after{
+  content: var(--text);
+  /* font-size: 120px; */
+  white-space: nowrap;
+  position: absolute;
+}
+
+.t-blue::after{
+  animation: a var(--animspeed) var(--animloop) var(--animfn);
+  animation-fill-mode: var(--fillmode);
+  background-color: blue;
+}
+
+.t-green::after{
+  content: var(--text);
+  animation: b var(--animspeed) var(--animloop) var(--animfn);
+  animation-fill-mode: var(--fillmode);
+  
+}
+
+.t-yellow::after{
+  animation: c var(--animspeed) var(--animloop) var(--animfn);
+  animation-fill-mode: var(--fillmode);
+
+}
+.t-red::after{
+  animation: d var(--animspeed) var(--animloop) var(--animfn);
+  animation-fill-mode: var(--fillmode);
+background-color: red;
+
+}
